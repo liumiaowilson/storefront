@@ -1,0 +1,139 @@
+.product {
+  margin: 0 15%;
+}
+
+.product--breadcrumbs {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  color: black;
+  font-weight: 700;
+  padding: 30px;
+}
+
+.product--breadcrumbs-link {
+  cursor: pointer;
+}
+
+.product--breadcrumbs-link_active {
+  color: #999;
+}
+
+.product--detail {
+  display: flex;
+}
+
+.product--image {
+  width: 60%;
+}
+
+.product--image img {
+  width: 100%;
+}
+
+.product--info {
+  width: 40%;
+  padding: 0 20px;
+}
+
+.product--info-brand {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.product--info-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding: 0 20px;
+}
+
+.product--info-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 15px;
+}
+
+.product--info-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #444;
+  padding-bottom: 25px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.product--info-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.product--info-actions_grid {
+  display: grid;
+  grid-template-columns: 50px 25px 200px;
+  grid-template-rows: 25px 25px;
+  grid-gap: 2px 2px;
+  grid-template-areas: 'quantity add addToCart' 'quantity remove addToCart';
+  justify-items: center;
+  align-items: center;
+}
+
+.product--info-quantity {
+  grid-area: quantity;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  color: #888;
+  cursor: default;
+  width: 100%;
+  height: 100%;
+}
+
+.product--info-button_add {
+  grid-area: add;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.product--info-button_remove {
+  grid-area: remove;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.product--info-button_add-to-cart {
+  grid-area: addToCart;
+  margin-left: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}

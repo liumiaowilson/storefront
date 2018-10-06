@@ -1,0 +1,151 @@
+.header {
+  width: 100%;
+  min-height: 68px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header--logo {
+  text-align: left;
+}
+
+.header--nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header--nav a {
+  text-decoration: none;
+}
+
+.header--nav-menu {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 10px 20px;
+  color: black;
+}
+
+.header--cart {
+  position: relative;
+  justify-self: end;
+}
+
+.header--cart-button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: transparent;
+  transition: ease 0.5s;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+}
+
+.header--cart-button_text {
+  padding: 5px;
+}
+
+.header--cart-button_text:hover,
+.header--cart-button_text:active {
+  border-bottom: 1px solid #aaa;
+}
+
+.cart--dropdown {
+  position: absolute;
+  left: -240px;
+  top: 40px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  width: 360px;
+  z-index: 1000;
+}
+
+.cart--product {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.cart--product-image {
+  width: 80px;
+  height: 80px;
+}
+
+.cart--product-description {
+  text-align: left;
+  padding: 0 10px;
+}
+
+.cart--product-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.cart--product-quantity {
+  font-weight: 300;
+  font-size: 10px;
+}
+
+.cart--product-brand {
+  text-transform: uppercase;
+  font-size: 10px;
+  padding: 5px 0;
+  font-weight: 500;
+  color: #999;
+}
+
+.cart--product-price {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.cart--dropdown-summary {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin: 10px;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #aaa;
+}
+
+.cart--dropdown-actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.cart--dropdown-button {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 20px;
+  cursor: pointer;
+  width: 120px;
+}
+
+.cart--dropdown-button_view-cart {
+  border: 1px solid black;
+  color: #444;
+}
+
+.cart--dropdown-button_checkout {
+  border: 1px solid black;
+  background-color: black;
+  color: #ccc;
+}
