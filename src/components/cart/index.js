@@ -4,8 +4,15 @@ import { withRouter } from 'react-router';
 import './cart.css';
 import { formatCurrency } from '../../utils';
 import { actions } from '../../actions';
+import { getCartItems, getCartTotal } from '../../utils';
 
-const CartRow = ({ product, amount, addItem, removeItem, removeAllItems }) => (
+export const CartRow = ({
+  product,
+  amount,
+  addItem,
+  removeItem,
+  removeAllItems
+}) => (
   <tr>
     <td className="cart--body-table_row">
       <div className="cart--body-table_item">
@@ -46,7 +53,7 @@ const CartRow = ({ product, amount, addItem, removeItem, removeAllItems }) => (
   </tr>
 );
 
-const CartOverview = ({ total }) => (
+export const CartOverview = ({ total }) => (
   <div className="cart--overview">
     <div className="cart--overview-section">
       <div className="cart--overview-label">Cart Overview</div>
@@ -66,7 +73,7 @@ const CartOverview = ({ total }) => (
   </div>
 );
 
-const CartTable = ({ cart, addToCart, removeFromCart }) => (
+export const CartTable = ({ cart, addToCart, removeFromCart }) => (
   <table className="cart--body-table">
     <thead>
       <tr>
@@ -91,7 +98,7 @@ const CartTable = ({ cart, addToCart, removeFromCart }) => (
   </table>
 );
 
-const CartActions = ({ total, continueShopping }) => (
+export const CartActions = ({ total, continueShopping }) => (
   <div className="cart--actions">
     <div
       className="cart--button cart--button-continue_shopping"
@@ -105,7 +112,7 @@ const CartActions = ({ total, continueShopping }) => (
   </div>
 );
 
-const Cart = ({ cart, total, history, addToCart, removeFromCart }) => {
+export const Cart = ({ cart, total, history, addToCart, removeFromCart }) => {
   return (
     <div className="cart">
       <div className="cart--title">Shopping Cart</div>
@@ -128,14 +135,8 @@ const Cart = ({ cart, total, history, addToCart, removeFromCart }) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  const cart = Object.entries(state.cart).map(([key, val]) => ({
-    product: state.products.find(p => p.id === key),
-    amount: val
-  }));
-  const total = cart.reduce(
-    (prev, curr) => prev + curr.product.price * curr.amount,
-    0
-  );
+  const cart = getCartItems(state.cart, state.products);
+  const total = getCartTotal(cart);
   return {
     cart,
     total

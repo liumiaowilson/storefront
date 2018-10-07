@@ -5,7 +5,7 @@ import './product.css';
 import { actions } from '../../actions';
 import { formatCurrency } from '../../utils';
 
-class ProductActions extends Component {
+export class ProductActions extends Component {
   state = {
     amount: 1
   };
@@ -48,7 +48,7 @@ class ProductActions extends Component {
   }
 }
 
-const Product = ({ product, history, addToCart }) => {
+export const Product = ({ product, history, addToCart }) => {
   const addNewProduct = amount => {
     addToCart(product.id, amount);
     history.push('/cart');

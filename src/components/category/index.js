@@ -5,7 +5,7 @@ import './category.css';
 import { formatCurrency } from '../../utils';
 import { actions } from '../../actions';
 
-const ProductGridItem = ({ product, viewDetails, addToCart }) => (
+export const ProductGridItem = ({ product, viewDetails, addToCart }) => (
   <div>
     <div
       className="category--item-image"
@@ -34,7 +34,7 @@ const ProductGridItem = ({ product, viewDetails, addToCart }) => (
   </div>
 );
 
-const Category = ({ category, products, history, addToCart }) => {
+export const Category = ({ category, products, history, addToCart }) => {
   return (
     <div>
       <div

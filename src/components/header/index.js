@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import './header.css';
 import { actions } from '../../actions';
 import { withRouter } from 'react-router-dom';
-import { formatCurrency } from '../../utils';
+import { formatCurrency, getCartItems, getCartTotal } from '../../utils';
 
-const HeaderCartItem = ({ product, amount, removeAllFromCart }) => (
+export const HeaderCartItem = ({ product, amount, removeAllFromCart }) => (
   <div className="cart--product">
     <img
       className="cart--product-image"
@@ -29,7 +29,7 @@ const HeaderCartItem = ({ product, amount, removeAllFromCart }) => (
   </div>
 );
 
-const HeaderCart = ({
+export const HeaderCart = ({
   cart,
   total,
   isCartOpen,
@@ -85,7 +85,7 @@ const HeaderCart = ({
   </div>
 );
 
-const Header = ({
+export const Header = ({
   cart,
   total,
   history,
@@ -139,14 +139,8 @@ const Header = ({
 };
 
 const mapStateToProps = (state, ownProps) => {
-  const cart = Object.entries(state.cart).map(([key, val]) => ({
-    product: state.products.find(p => p.id === key),
-    amount: val
-  }));
-  const total = cart.reduce(
-    (prev, curr) => prev + curr.product.price * curr.amount,
-    0
-  );
+  const cart = getCartItems(state.cart, state.products);
+  const total = getCartTotal(cart);
   return {
     cart,
     total,
