@@ -84,6 +84,7 @@
 .cart--product-description {
   text-align: left;
   padding: 0 10px;
+  flex-grow: 2;
 }
 
 .cart--product-title {
@@ -148,4 +149,19 @@
   border: 1px solid black;
   background-color: black;
   color: #ccc;
+}
+
+.cart--dropdown-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 900;
+}
+
+.cart--product-action_remove {
+  cursor: pointer;
 }

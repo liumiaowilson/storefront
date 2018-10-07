@@ -212,3 +212,7 @@
   font-weight: bold;
   letter-spacing: 1px;
 }
+
+.cart--body-button_delete {
+  cursor: pointer;
+}
