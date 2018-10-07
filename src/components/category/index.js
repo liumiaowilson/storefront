@@ -15,12 +15,16 @@ export const ProductGridItem = ({ product, viewDetails, addToCart }) => (
     >
       <div className="category--item-overlay">
         <div
+          role="button"
+          tabIndex="0"
           className="category--item-overlay_button"
           onClick={() => viewDetails(product.id)}
         >
           View Details
         </div>
         <div
+          role="button"
+          tabIndex="0"
           className="category--item-overlay_button"
           onClick={() => addToCart(product.id, 1)}
         >

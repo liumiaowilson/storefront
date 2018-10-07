@@ -22,8 +22,13 @@ export const HeaderCartItem = ({ product, amount, removeAllFromCart }) => (
       <div className="cart--product-price">{formatCurrency(product.price)}</div>
     </div>
     <div className="cart--product-action">
-      <div className="cart--product-action_remove">
-        <i className="fa fa-times" onClick={removeAllFromCart} />
+      <div
+        role="button"
+        tabIndex="0"
+        className="cart--product-action_remove"
+        onClick={removeAllFromCart}
+      >
+        <i className="fa fa-times" />
       </div>
     </div>
   </div>
@@ -39,14 +44,24 @@ export const HeaderCart = ({
   checkout
 }) => (
   <div className="header--cart">
-    <div className="header--cart-button" onClick={() => toggleCart(true)}>
+    <div
+      role="button"
+      tabIndex="0"
+      className="header--cart-button"
+      onClick={() => toggleCart(true)}
+    >
       <span className="header--cart-button_text">
         My Cart ({Object.keys(cart).length})
       </span>
       <i className="fa fa-angle-down" />
     </div>
     {isCartOpen && [
-      <div className="cart--dropdown" key="dropdown">
+      <div
+        role="dialog"
+        aria-label="My Cart"
+        className="cart--dropdown"
+        key="dropdown"
+      >
         {cart.map(item => (
           <HeaderCartItem
             key={item.product.id}
@@ -63,12 +78,16 @@ export const HeaderCart = ({
         </div>
         <div className="cart--dropdown-actions">
           <div
+            role="button"
+            tabIndex="0"
             className="cart--dropdown-button cart--dropdown-button_view-cart"
             onClick={viewCart}
           >
             View Cart
           </div>
           <div
+            role="button"
+            tabIndex="0"
             className="cart--dropdown-button cart--dropdown-button_checkout"
             onClick={checkout}
           >
@@ -77,6 +96,8 @@ export const HeaderCart = ({
         </div>
       </div>,
       <div
+        role="button"
+        tabIndex="0"
         className="cart--dropdown-background"
         key="background"
         onClick={() => toggleCart(false)}

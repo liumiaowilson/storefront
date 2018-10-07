@@ -31,13 +31,25 @@ export class ProductActions extends Component {
     return (
       <div className="product--info-actions_grid">
         <div className="product--info-quantity">{amount}</div>
-        <div className="product--info-button_add" onClick={this.addItem}>
+        <div
+          role="button"
+          tabIndex="0"
+          className="product--info-button_add"
+          onClick={this.addItem}
+        >
           +
         </div>
-        <div className="product--info-button_remove" onClick={this.removeItem}>
+        <div
+          role="button"
+          tabIndex="0"
+          className="product--info-button_remove"
+          onClick={this.removeItem}
+        >
           -
         </div>
         <div
+          role="button"
+          tabIndex="0"
           className="product--info-button_add-to-cart"
           onClick={() => addToCart(amount)}
         >

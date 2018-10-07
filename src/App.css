@@ -33,3 +33,7 @@
     transform: rotate(360deg);
   }
 }
+
+[role='button']:focus {
+  outline: none;
+}

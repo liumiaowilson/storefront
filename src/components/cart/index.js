@@ -30,10 +30,20 @@ export const CartRow = ({
     <td className="cart--body-table_row align-top">
       <div className="cart--body-table_item_grid">
         <div className="cart--body-table_item_quantity">{amount}</div>
-        <div className="cart--body-table_item_add" onClick={addItem}>
+        <div
+          role="button"
+          tabIndex="0"
+          className="cart--body-table_item_add"
+          onClick={addItem}
+        >
           +
         </div>
-        <div className="cart--body-table_item_remove" onClick={removeItem}>
+        <div
+          role="button"
+          tabIndex="0"
+          className="cart--body-table_item_remove"
+          onClick={removeItem}
+        >
           -
         </div>
       </div>
@@ -45,7 +55,12 @@ export const CartRow = ({
     </td>
     <td className="cart--body-table_row align-top">
       <div className="cart--body-table_item_delete">
-        <div className="cart--body-button_delete" onClick={removeAllItems}>
+        <div
+          role="button"
+          tabIndex="0"
+          className="cart--body-button_delete"
+          onClick={removeAllItems}
+        >
           ×
         </div>
       </div>
@@ -101,6 +116,8 @@ export const CartTable = ({ cart, addToCart, removeFromCart }) => (
 export const CartActions = ({ total, continueShopping }) => (
   <div className="cart--actions">
     <div
+      role="button"
+      tabIndex="0"
       className="cart--button cart--button-continue_shopping"
       onClick={continueShopping}
     >
